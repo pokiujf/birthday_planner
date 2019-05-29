@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 export default class NewUser extends Component {
   constructor(props, context) {
@@ -14,8 +15,24 @@ export default class NewUser extends Component {
     };
   }
 
-  saveUser = () => {
-
+  saveUser = (e) => {
+    e.preventDefault();
+    let parsedDate = moment(this.state.date, "YYYY-MM-DD");
+    if (!parsedDate.isValid()) {
+      this.setState(({ errors }) => ({ errors: { ...errors, date: 'Date is invalid' } }));
+      return;
+    }
+    axios.post(
+      'http://localhost:3001/users',
+      {
+        name: this.state.name,
+        email: this.state.email,
+        date: parsedDate.valueOf(),
+        image: this.state.image,
+      }
+    ).then(() => {
+      this.props.history.push('/users')
+    });
   };
 
   updateField = ({ target: { value, name } }) => {
@@ -24,8 +41,8 @@ export default class NewUser extends Component {
 
   render() {
     return (
-      <div className="row">
-        <form>
+      <form>
+        <div className="row">
           <div className="col-3 offset-2">
             {
               this.state.image
@@ -41,8 +58,7 @@ export default class NewUser extends Component {
                 name="name"
                 id="name"
                 value={this.state.name}
-                placeholder="Full
-              name"
+                placeholder="Full name"
                 onChange={this.updateField}
                 required
               />
@@ -66,9 +82,11 @@ export default class NewUser extends Component {
                 value={this.state.date}
                 placeholder="Date of birth YYYY-MM-DD"
                 onChange={this.updateField}
-                pattern="\d{4}\-\d{2}\-\d{2}"
                 required
               />
+              {this.state.errors.date && (
+                <div style={{color: 'red'}}>{this.state.errors.date}</div>
+              )}
             </div>
             <div>
               <label htmlFor="image">Image URL</label>
@@ -81,12 +99,11 @@ export default class NewUser extends Component {
               />
             </div>
             <div>
-              <button type="submit" onSubmit={this.saveUser}>Add user</button>
+              <button type="submit" onClick={this.saveUser}>Add user</button>
             </div>
           </div>
-
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

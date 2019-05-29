@@ -4,13 +4,11 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 export default class UserListing extends Component {
-  constructor(props, context) {
-    super(props, context);
+  state = {
+    users: [],
+  };
 
-    this.state = {
-      users: [],
-    };
-
+  componentDidMount() {
     axios.get('http://localhost:3001/users', { params: { "id_ne": 1 } }).then(({ data: users }) => {
       this.setState({ users })
     });
