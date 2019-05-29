@@ -16,6 +16,7 @@
   "gifts": [
     {
       "id": 1,
+      "userId": 2,
       "text": "Flowers",
       "url": "https://www.prestigeflowers.co.uk/images/NF4016-130116.jpg"
     }

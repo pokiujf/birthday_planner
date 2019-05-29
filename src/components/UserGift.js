@@ -20,8 +20,11 @@ export default class UserGift extends Component {
             <img src={this.props.gift.url} style={{ width: '100%' }} />
           </div>
         </div>}
-        <div className="row">
-        </div>
+        {this.props.gift.text && <div className="row">
+          <div className="col-12">
+            {this.props.gift.text}
+          </div>
+        </div>}
       </div>
     )
   }
