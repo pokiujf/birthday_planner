@@ -2,21 +2,23 @@
   "users": [
     {
       "id": 1,
-      "email": "admin@admin.com",
-      "name": "Admin"
-    },
-    {
-      "id": 2,
       "email": "vika@test.com",
       "name": "Viktoria Byakova",
       "date": 986688000000,
       "image": "https://jira.td-berlin.com/secure/useravatar?ownerId=v.bykava&avatarId=11609"
+    },
+    {
+      "name": "Arek",
+      "email": "arek@mail.com",
+      "date": 716594400000,
+      "image": "https://www.gravatar.com/avatar/791aed19c0ec80143fe7a97e22f33c0b",
+      "id": 2
     }
   ],
   "gifts": [
     {
       "id": 1,
-      "userId": 2,
+      "userId": 1,
       "text": "Flowers",
       "url": "https://www.prestigeflowers.co.uk/images/NF4016-130116.jpg"
     }

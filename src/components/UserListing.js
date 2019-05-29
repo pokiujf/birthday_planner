@@ -9,7 +9,10 @@ export default class UserListing extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:3001/users', { params: { "id_ne": 1 } }).then(({ data: users }) => {
+    const currentUser = JSON.parse(localStorage.getItem('user'));
+    axios.get('http://localhost:3001/users', {
+      params: { "id_ne": currentUser.id }
+    }).then(({ data: users }) => {
       this.setState({ users })
     });
   }

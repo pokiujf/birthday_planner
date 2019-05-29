@@ -3,6 +3,7 @@ import UserGift from './UserGift';
 import AddGift from './AddGift';
 import axios from 'axios';
 import moment from 'moment';
+import { Redirect } from "react-router-dom";
 
 export default class User extends Component {
   constructor(props, context) {
@@ -13,11 +14,14 @@ export default class User extends Component {
       user: {},
     };
 
-    axios.get(`http://localhost:3001/users/${this.props.match.params.id}`).then(({ data: user }) => {
-      this.setState({ user });
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
+    if (this.currentUser.id !== +this.props.match.params.id) {
+      axios.get(`http://localhost:3001/users/${this.props.match.params.id}`).then(({ data: user }) => {
+        this.setState({ user });
 
-      this.fetchUserGifts();
-    });
+        this.fetchUserGifts();
+      });
+    }
   }
 
   fetchUserGifts = () => {
@@ -33,6 +37,11 @@ export default class User extends Component {
   };
 
   render() {
+    if (this.currentUser.id === +this.props.match.params.id) {
+      return (
+        <Redirect to="/users" />
+      )
+    }
     return (
       <Fragment>
         <div className="row">
