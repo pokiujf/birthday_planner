@@ -9,6 +9,7 @@ export default class LoginPage extends Component {
       email: '',
       errors: {},
     };
+    this.user = localStorage.getItem("user")
   }
 
   submitLoginForm = (event) => {
@@ -23,7 +24,8 @@ export default class LoginPage extends Component {
       let foundUser = response.data[0];
       if (foundUser) {
         localStorage.setItem('user', JSON.stringify(foundUser));
-        this.setState({ errors: {}})
+        this.setState({ errors: {} });
+        this.props.history.push('/')
       } else {
         this.setState({ errors: { email: 'No user for this email' } })
       }
@@ -41,7 +43,7 @@ export default class LoginPage extends Component {
           <label htmlFor="email">Email</label>
           <input id='email' name="email" value={this.state.email} onChange={this.updateField} />
           {this.state.errors.email && (
-            <div style={{color: 'red'}}>{this.state.errors.email}</div>
+            <div style={{ color: 'red' }}>{this.state.errors.email}</div>
           )}
         </div>
         <button type="submit" onClick={this.submitLoginForm}>Login</button>
