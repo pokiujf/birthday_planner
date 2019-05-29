@@ -43,7 +43,7 @@ export default class UserListing extends Component {
           </div>
           <div className="col-3 offset-2">
             <div>
-              <button onClick={this.logout} style={{'margin-bottom': '10px'}}>Logout</button>
+              <button onClick={this.logout} className="btn btn-outline-secondary" style={{'margin-bottom': '10px'}}>Logout</button>
             </div>
             {/*<div className="form-search">*/}
             {/*  <input type="search" placeholder="Search..." name="search" />*/}
