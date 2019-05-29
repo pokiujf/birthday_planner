@@ -22,7 +22,9 @@ export default class UserListing extends Component {
           <div className="col-7">
             <div className="row">
               <div className="col-2">
-                <button>+</button>
+                <div className="plus-btn-wrapper">
+                  <button>+</button>
+                </div>
               </div>
               <div className="col-5">
                 Name
@@ -33,7 +35,9 @@ export default class UserListing extends Component {
             </div>
           </div>
           <div className="col-3 offset-2">
-            <input name="search" />
+            <div className="form-search">
+              <input type="search" placeholder="Search..." name="search" />
+            </div>
           </div>
         </div>
         <div className="row">

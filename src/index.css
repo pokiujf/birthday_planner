@@ -17,6 +17,19 @@ label {
 button {
   border-radius: 0.4rem;
 }
+[type=search] {
+  width: 100%;
+}
+.plus-btn-wrapper {
+  margin-left: 11px;
+}
+.container {
+  margin-top: 3rem;
+}
+.container > .row:first-child {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 /**
 * login-container
 */
@@ -38,4 +51,7 @@ button {
   margin-bottom: 1rem;
   width: 15rem;
 }
-
+input {
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.4rem;
+}
