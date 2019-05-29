@@ -13,14 +13,16 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <PrivateRoute exact path="/" component={UserListing} />
-          <PrivateRoute path="/users" component={UserListing} />
-          <PrivateRoute path="/users/:id" component={User} />
-          <Route path="/login" component={LoginPage} />
-        </Switch>
-      </Router>
+      <div className="container">
+        <Router>
+          <Switch>
+            <PrivateRoute exact path="/" component={UserListing} />
+            <PrivateRoute path="/users" component={UserListing} />
+            <PrivateRoute path="/users/:id" component={User} />
+            <Route path="/login" component={LoginPage} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
