@@ -1,6 +1,13 @@
 {
   "users": [
-    { "id": 1, "email": "admin@admin.com", "name": "Admin" }
+    { "id": 1, "email": "admin@admin.com", "name": "Admin" },
+    {
+      "id": 2,
+      "email": "vika@test.com",
+      "name": "Viktoria Byakova",
+      "date": 986688000000,
+      "image": "https://jira.td-berlin.com/secure/useravatar?ownerId=v.bykava&avatarId=11609"
+    }
   ],
   "gifts": [
     {"id":  1, "text":  "Flowers", "url": "https://www.prestigeflowers.co.uk/images/NF4016-130116.jpg"}
