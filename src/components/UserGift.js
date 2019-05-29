@@ -15,16 +15,10 @@ export default class UserGift extends Component {
   render() {
     return (
       <div className="col-4">
-        {this.props.gift.url && <div className="row">
-          <div className="col-12">
-            <img src={this.props.gift.url} style={{ width: '100%' }} />
-          </div>
-        </div>}
-        {this.props.gift.text && <div className="row">
-          <div className="col-12">
-            {this.props.gift.text}
-          </div>
-        </div>}
+        {this.props.gift.url && (
+          <div><img src={this.props.gift.url} style={{ width: '100%' }} /></div>
+        )}
+        {this.props.gift.text && <div>{this.props.gift.text}</div>}
       </div>
     )
   }

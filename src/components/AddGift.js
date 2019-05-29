@@ -21,7 +21,7 @@ export default class AddGift extends Component {
     this.setState({ [name]: value })
   };
 
-  submitAddGiftForm= (event) => {
+  submitAddGiftForm = (event) => {
     event.preventDefault();
     axios.post(
       'http://localhost:3001/gifts',
@@ -38,22 +38,16 @@ export default class AddGift extends Component {
   render() {
     return (
       <div className="col-4">
-        <div className="row">
-          <div className="col-12">
-            <label htmlFor="url">Url</label>
-            <input id='url' name="url" value={this.state.url} onChange={this.updateField} />
-          </div>
+        <div>
+          <label htmlFor="url">Url</label>
+          <input id='url' name="url" value={this.state.url} onChange={this.updateField} />
         </div>
-        <div className="row">
-          <div className="col-12">
-            <label htmlFor="text">Text</label>
-            <input id='text' name="text" value={this.state.text} onChange={this.updateField} />
-          </div>
+        <div>
+          <label htmlFor="text">Text</label>
+          <input id='text' name="text" value={this.state.text} onChange={this.updateField} />
         </div>
-        <div className="row">
-          <div className="col-12">
-            <button type="submit" onClick={this.submitAddGiftForm}>Add</button>
-          </div>
+        <div>
+          <button type="submit" onClick={this.submitAddGiftForm}>Add</button>
         </div>
       </div>
     )
