@@ -17,7 +17,7 @@ export default class UserListing extends Component {
   render() {
     return (
       <Fragment>
-        <div className="row">
+        <div className="row table-header">
           <div className="col-7">
             <div className="row">
               <div className="col-2">

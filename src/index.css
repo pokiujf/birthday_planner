@@ -3,6 +3,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  background-image: url("assets/background_main.png");
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,8 +13,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+input {
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.4rem;
+}
 label {
-  margin-right: 1.5rem;
+  margin-top: 1rem;
+  display: block;
 }
 button {
   border-radius: 0.4rem;
@@ -26,22 +33,37 @@ button {
 .container {
   margin-top: 3rem;
 }
-.container > .row:first-child {
+.table-header {
   margin-bottom: 1rem;
   font-weight: bold;
 }
 /**
+* new-user-container
+*/
+.new-user-container input {
+  width: 20rem;
+}
+.new-user-container button {
+  margin-top: 2rem;
+}
+/**
 * login-container
 */
-.login-container  h3 {
-  margin-bottom: 2rem;
-}
 .login-container  {
   width: 30rem;
-  background: lightblue;
+  background-color: #C999E4;
+  opacity: 0.8;
   border: 1px solid black;
   margin: 5rem auto;
   padding: 2rem;
+  border-radius: 1rem;
+}
+.login-container  h3 {
+  margin-bottom: 2rem;
+}
+.login-container label {
+  display: inline;
+  margin-right: 1.5rem;
 }
 .login-container button {
   margin-top: 1rem;
@@ -51,7 +73,4 @@ button {
   margin-bottom: 1rem;
   width: 15rem;
 }
-input {
-  padding: 0.1rem 0.5rem;
-  border-radius: 0.4rem;
-}
+
