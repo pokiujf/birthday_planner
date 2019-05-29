@@ -44,12 +44,18 @@ export default class LoginPage extends Component {
       )
     }
     return (
-      <div class="login-container">
+      <div className="login-container">
         <h3>Please Login!</h3>
         <form>
           <div>
             <label htmlFor="email">Email</label>
-            <input id='email' name="email" value={this.state.email} onChange={this.updateField} />
+            <input
+            id='email'
+            name="email"
+            type="email"
+            value={this.state.email}
+            onChange={this.updateField}
+          />
             {this.state.errors.email && (
               <div style={{ color: 'red' }}>{this.state.errors.email}</div>
             )}

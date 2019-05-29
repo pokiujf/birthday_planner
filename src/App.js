@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import LoginPage from "./components/LoginPage";
 import UserListing from "./components/UserListing";
 import User from "./components/User";
+import NewUser from "./components/NewUser";
 
 class App extends Component {
   constructor(props) {
