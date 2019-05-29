@@ -16,6 +16,7 @@ class App extends Component {
       <div className="container">
         <Router>
           <Switch>
+            <PrivateRoute path="/users/new" component={NewUser} />
             <PrivateRoute path="/users/:id" component={User} />
             <PrivateRoute path="/users" component={UserListing} />
             <PrivateRoute exact path="/" component={UserListing} />

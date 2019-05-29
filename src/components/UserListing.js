@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import UserRow from './UserRow';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 export default class UserListing extends Component {
   constructor(props, context) {
@@ -23,7 +24,7 @@ export default class UserListing extends Component {
             <div className="row">
               <div className="col-2">
                 <div className="plus-btn-wrapper">
-                  <button>+</button>
+                  <button><Link to="/users/new">+</Link></button>
                 </div>
               </div>
               <div className="col-5">
