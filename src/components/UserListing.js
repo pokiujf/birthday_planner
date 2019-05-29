@@ -17,6 +17,11 @@ export default class UserListing extends Component {
     });
   }
 
+  logout = () => {
+    localStorage.removeItem('user');
+    this.props.history.push('/login')
+  };
+
   render() {
     return (
       <Fragment>
@@ -37,6 +42,9 @@ export default class UserListing extends Component {
             </div>
           </div>
           <div className="col-3 offset-2">
+            <div>
+              <button onClick={this.logout}>Logout</button>
+            </div>
             <div className="form-search">
               <input type="search" placeholder="Search..." name="search" />
             </div>
