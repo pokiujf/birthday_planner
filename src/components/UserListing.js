@@ -43,7 +43,7 @@ export default class UserListing extends Component {
           </div>
           <div className="col-3 offset-2">
             <div>
-              <button onClick={this.logout}>Logout</button>
+              <button onClick={this.logout} style={{'margin-bottom': '10px'}}>Logout</button>
             </div>
             <div className="form-search">
               <input type="search" placeholder="Search..." name="search" />
@@ -55,10 +55,6 @@ export default class UserListing extends Component {
             {this.state.users.map((user) => (
               <UserRow key={user.id} user={user} />
             ))}
-          </div>
-          <div className="col-3 offset-2">
-            <div>Notifications</div>
-            Soon something will be here
           </div>
         </div>
       </Fragment>
