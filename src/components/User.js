@@ -3,7 +3,9 @@ import UserGift from './UserGift';
 import AddGift from './AddGift';
 import axios from 'axios';
 import moment from 'moment';
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import fem from "../assets/female_default.png";
+import male from "../assets/male_default.png";
 
 export default class User extends Component {
   constructor(props, context) {
@@ -47,7 +49,14 @@ export default class User extends Component {
         <div className="user-detail-container">
           <div className="row">
             <div className="col-2">
-              <img src={this.state.user.image} style={{ width: '100%' }} />
+              { this.state.user.image
+                ? <img src={this.state.user.image} style={{ width: '100%' }} />
+                : this.state.user.gender === 'f'
+                  ? <img src={fem} style={{ width: '100%' }} />
+                  : <img src={male} style={{ width: '100%' }} />
+              }
+
+              <div><Link to="/">Go Back</Link></div>
             </div>
             <div className="col-10">
               <div className="row table-header">
@@ -69,6 +78,6 @@ export default class User extends Component {
           </div>
         </div>
       </Fragment>
-    )
+    );
   }
 }

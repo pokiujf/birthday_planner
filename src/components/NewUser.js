@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { Link } from "react-router-dom";
+import fem from '../assets/female_default.png';
+import male from '../assets/male_default.png';
 
 export default class NewUser extends Component {
   constructor(props, context) {
@@ -27,6 +30,7 @@ export default class NewUser extends Component {
       {
         name: this.state.name,
         email: this.state.email,
+        gender: this.state.gender,
         date: parsedDate.valueOf(),
         image: this.state.image,
       }
@@ -47,10 +51,12 @@ export default class NewUser extends Component {
             <div className="col-3 offset-2">
               {
                 this.state.image
-                  ? <img src={this.state.image} />
-                  : 'Placeholder here'
+                  ? <img src={this.state.image} style={{ width: '100%' }}/>
+                  : this.state.gender === 'f'
+                    ? <img src={fem} style={{ width: '100%' }} />
+                    : <img src={male} style={{ width: '100%' }} />
               }
-
+              <div><Link to="/">Go Back</Link></div>
             </div>
             <div className="col-7">
               <div>
@@ -63,6 +69,19 @@ export default class NewUser extends Component {
                   onChange={this.updateField}
                   required
                 />
+              </div>
+              <div>
+                <label htmlFor="name">Gender</label>
+                <select
+                  name="gender"
+                  id="gender"
+                  value={this.state.gender}
+                  onChange={this.updateField}
+                  required
+                >
+                  <option value="m">M</option>
+                  <option value="f">F</option>
+                </select>
               </div>
               <div>
                 <label htmlFor="email">Email</label>

@@ -3,16 +3,41 @@
     {
       "id": 1,
       "email": "vika@test.com",
+      "gender": "f",
       "name": "Viktoria Byakova",
       "date": 986688000000,
       "image": "https://jira.td-berlin.com/secure/useravatar?ownerId=v.bykava&avatarId=11609"
     },
     {
       "name": "Arek",
+      "gender": "m",
       "email": "arek@mail.com",
       "date": 716594400000,
       "image": "https://www.gravatar.com/avatar/791aed19c0ec80143fe7a97e22f33c0b",
       "id": 2
+    },
+    {
+      "name": "Jochen",
+      "gender": "m",
+      "email": "jochen@td.com",
+      "date": 323650800000,
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/db/Donnie_Darko_poster.jpg",
+      "id": 3
+    },
+    {
+      "name": "some fem",
+      "email": "fem@fem.com",
+      "gender": "f",
+      "date": -23196072240000,
+      "image": "",
+      "id": 4
+    },
+    {
+      "name": "Some Mal",
+      "email": "mal@male.com",
+      "date": 1325372400000,
+      "image": "",
+      "id": 5
     }
   ],
   "gifts": [
@@ -21,6 +46,30 @@
       "userId": 1,
       "text": "Flowers",
       "url": "https://www.prestigeflowers.co.uk/images/NF4016-130116.jpg"
+    },
+    {
+      "url": "",
+      "text": "",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "url": "https://da4dkroembtou.cloudfront.net/wp-content/uploads/2017/06/CarSifu_Mercedes-Benz-CLA-200_AMG.jpg",
+      "text": "Nice merc",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "url": "https://img.cdandlp.com/2017/04/imgL/118716802-2.jpg",
+      "text": "Latest metallica",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "url": "https://media.wired.com/photos/5b86fce8900cb57bbfd1e7ee/master/pass/Jaguar_I-PACE_S_Indus-Silver_065.jpg",
+      "text": "Some JAG who cares",
+      "userId": 2,
+      "id": 5
     }
   ]
 }
