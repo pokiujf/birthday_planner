@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 export default class LoginPage extends Component {
   constructor(props, context) {
@@ -37,6 +38,11 @@ export default class LoginPage extends Component {
   };
 
   render() {
+    if (this.user) {
+      return (
+        <Redirect to="/"/>
+      )
+    }
     return (
       <form>
         <div>
