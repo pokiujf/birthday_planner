@@ -30,7 +30,7 @@ export default class UserListing extends Component {
             <div className="row">
               <div className="col-2">
                 <div className="plus-btn-wrapper">
-                  <button><Link to="/users/new">+</Link></button>
+                  <button type="button" className="btn btn-outline-secondary" style={{width: '100%'}}><Link to="/users/new">Add +</Link></button>
                 </div>
               </div>
               <div className="col-5">
