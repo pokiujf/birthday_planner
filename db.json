@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": 1, "email": "admin@admin.com", "name": "Admin" }
+  ],
+  "gifts": [
+    {"id":  1, "text":  "Flowers", "url": "https://www.prestigeflowers.co.uk/images/NF4016-130116.jpg"}
+  ]
+}
