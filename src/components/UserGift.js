@@ -18,7 +18,7 @@ export default class UserGift extends Component {
         {this.props.gift.url && (
           <div><img src={this.props.gift.url} style={{ width: '100%' }} /></div>
         )}
-        {this.props.gift.text && <div>{this.props.gift.text}</div>}
+        {this.props.gift.text && <div className="gift-name">{this.props.gift.text}</div>}
       </div>
     )
   }

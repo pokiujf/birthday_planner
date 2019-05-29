@@ -47,6 +47,16 @@ button {
   margin-top: 2rem;
 }
 /**
+* user-detail-container
+*/
+.user-detail-container button {
+  margin-top: 2rem;
+}
+.gift-name {
+  display: table;
+  margin: 0.3rem auto;
+}
+/**
 * login-container
 */
 .login-container  {

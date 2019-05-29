@@ -44,25 +44,27 @@ export default class User extends Component {
     }
     return (
       <Fragment>
-        <div className="row">
-          <div className="col-2">
-            <img src={this.state.user.image} style={{ width: '100%' }} />
-          </div>
-          <div className="col-10">
-            <div className="row">
-              <div className="col-4">
-                {this.state.user.name}
-              </div>
-              <div className="col-4">
-                {moment(this.state.user.date).format("MMMM D")}
-              </div>
+        <div className="user-detail-container">
+          <div className="row">
+            <div className="col-2">
+              <img src={this.state.user.image} style={{ width: '100%' }} />
             </div>
-            <div className="row">
-              {this.state.user.id && <AddGift userId={this.state.user.id} updateFn={this.fetchUserGifts} />}
+            <div className="col-10">
+              <div className="row table-header">
+                <div className="col-4">
+                  {this.state.user.name}
+                </div>
+                <div className="col-4">
+                  {moment(this.state.user.date).format("MMMM D")}
+                </div>
+              </div>
+              <div className="row">
+                {this.state.user.id && <AddGift userId={this.state.user.id} updateFn={this.fetchUserGifts} />}
 
-              {this.state.gifts.map((gift) => (
-                <UserGift key={gift.id} gift={gift} />
-              ))}
+                {this.state.gifts.map((gift) => (
+                  <UserGift key={gift.id} gift={gift} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
